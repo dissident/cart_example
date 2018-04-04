@@ -30,6 +30,7 @@ describe Cart do
     end
 
     it 'sales_taxes is 1.50' do
+      puts cart.to_s
       expect(cart.sales_taxes).to eq(1.5)
     end
   end
@@ -58,6 +59,7 @@ describe Cart do
     end
 
     it 'sales_taxes is 7.65' do
+      puts cart.to_s
       expect(cart.sales_taxes).to eq(7.65)
     end
   end
@@ -97,6 +99,7 @@ describe Cart do
     end
 
     it 'sales_taxes is 6.7' do
+      puts cart.to_s
       expect(cart.sales_taxes).to eq(6.7)
     end
   end

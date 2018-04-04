@@ -34,7 +34,7 @@ describe Item do
         })
       end
       it 'return 0.6' do
-        expect(item.tax(1)).to eq(0.6)
+        expect(item.tax(1)).to eq(0.65)
       end
     end
   end

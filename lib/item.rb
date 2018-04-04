@@ -19,7 +19,7 @@ class Item
   end
 
   def cost(quantity)
-    @price * quantity + tax(quantity)
+    (@price * quantity + tax(quantity)).round(2)
   end
 
   def to_s(quantity)
@@ -29,7 +29,13 @@ class Item
   private
 
   def round_up(tax)
-    (tax * 20).round / 20.0
+    last_number = (tax * 100).round % 10
+    add = 0.00
+    add = 0.04 if [1, 6].include? last_number
+    add = 0.03 if [2, 7].include? last_number
+    add = 0.02 if [3, 8].include? last_number
+    add = 0.01 if [4, 9].include? last_number
+    (tax + add).round(2)
   end
 
   def validate(params)
